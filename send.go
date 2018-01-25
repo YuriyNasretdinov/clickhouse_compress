@@ -5,7 +5,7 @@ var httpClient = &http.Client{
 	Timeout:   time.Minute,
 }
 
-// ToClickHouse sends data to clickhouse and returns errors if any
+// Send sends data to clickhouse and returns errors if any
 func Send(host string, table string, body []byte) error {
 	body = Compress(body)
 	start := time.Now()
